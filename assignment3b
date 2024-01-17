@@ -1,35 +1,50 @@
 #include<iostream>
 using namespace std;
 
-class gresmall{
-    private:
+class gresmall {
+private:
     int arr[100];
     int n;
-
-    public:
     int minval, maxval;
-    void find_min_max(){
-        cout<<"ENTER THE NUMBER OF TERMS: ";
-        cin>>n;
-        for(int i=0;i<n;i++){
-            cin>>arr[i];
-        }
-        maxval = minval = arr[0];
-        for(int i=1;i<n;i++){
-            if(minval>arr[i]){
-                minval = arr[i];
-            }
-            if(maxval<arr[i]){
-                maxval = arr[i];
-            }
-        }
-    }
+
+public:
+    void getArray();
+    int findMin();
+    int findMax();
 };
 
-int main(){
+void gresmall::getArray() {
+    cout << "ENTER THE NUMBER OF TERMS: ";
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+}
+
+int gresmall::findMin() {
+    minval = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (minval > arr[i]) {
+            minval = arr[i];
+        }
+    }
+    return minval;
+}
+
+int gresmall::findMax() {
+    maxval = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (maxval < arr[i]) {
+            maxval = arr[i];
+        }
+    }
+    return maxval;
+}
+
+int main() {
     gresmall sample1;
-    sample1.find_min_max();
-    cout<<"Minimum value: "<<sample1.minval<<endl;
-    cout<<"Maximum value: "<<sample1.maxval<<endl;
+    sample1.getArray();
+    cout << "Minimum value: " << sample1.findMin() << endl;
+    cout << "Maximum value: " << sample1.findMax() << endl;
     return 0;
 }
