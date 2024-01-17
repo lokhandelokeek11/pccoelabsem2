@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+class gresmall{
+    private:
+    int arr[100];
+    int n;
+
+    public:
+    int minval, maxval;
+    void find_min_max(){
+        cout<<"ENTER THE NUMBER OF TERMS: ";
+        cin>>n;
+        for(int i=0;i<n;i++){
+            cin>>arr[i];
+        }
+        maxval = minval = arr[0];
+        for(int i=1;i<n;i++){
+            if(minval>arr[i]){
+                minval = arr[i];
+            }
+            if(maxval<arr[i]){
+                maxval = arr[i];
+            }
+        }
+    }
+};
+
+int main(){
+    gresmall sample1;
+    sample1.find_min_max();
+    cout<<"Minimum value: "<<sample1.minval<<endl;
+    cout<<"Maximum value: "<<sample1.maxval<<endl;
+    return 0;
+}
