@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+class employee{
+    string name;
+    int id;
+    float salary;
+    
+    public:
+    void read();
+    void display();
+};
+void employee::read(){
+    cout<<"Enter the name of employee: ";
+    cin>>name;
+    cout<<"Enter the id of the employee: ";
+    cin>>id;
+    cout<<"Entet the salary of the employee: ";
+    cin>>salary;
+}
+void employee::display(){
+    cout<<"*********************************"<<endl;
+    cout<<"Details are: ";
+    cout<<"Name of the employee: "<<name<<endl;
+    cout<<"Id of the employee: "<<id<<endl;
+    cout<<"Salary of employee: "<<salary<<endl;
+    
+}
+
+int main() {
+    employee E1;
+    E1.read();
+    E1.display();
+
+    return 0;
+}
