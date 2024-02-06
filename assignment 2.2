@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+class Fibonacci {
+public:
+    void generateSequence(int n) {
+        int n1 = 0, n2 = 1, nextTerm;
+        cout << "Fibonacci sequence: " << endl;
+        for (int i = 1; i <= n; ++i) {
+            cout << n1 << endl;
+            nextTerm = n1 + n2;
+            n1 = n2;
+            n2 = nextTerm;
+        }
+    }
+};
+
+int main() {
+    int n3;
+    cout << "Enter the number of terms: ";
+    cin >> n3;
+    Fibonacci fib;
+    fib.generateSequence(n3);
+    return 0;
+}
