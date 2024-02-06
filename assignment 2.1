@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class SumOfDigits {
+private:
+    int num, reminder, sum;
+
+public:
+    void getNumber() {
+        cout << "Enter a number: ";
+        cin >> num;
+    }
+
+    void calculateSum() {
+        sum = 0;
+        while (num > 0) {
+            reminder = num % 10;
+            sum = sum + reminder;
+            num = num / 10;
+        }
+    }
+
+    void displaySum() {
+        cout << "Sum of digits: " << sum << endl;
+    }
+};
+
+int main() {
+    SumOfDigits obj;
+    obj.getNumber();
+    obj.calculateSum();
+    obj.displaySum();
+    return 0;
+}
