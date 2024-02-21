@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class sample2;
+
+class sample1 {
+    int a1;
+    string name1;
+public:
+    sample1() {
+        a1 = 10;
+        name1 = "lokeek";
+    }
+    friend void swap(sample1&, sample2&);
+};
+
+class sample2 {
+    int b1;
+    string name2;
+public:
+    sample2() {
+        b1 = 20;
+        name2 = "rishabh";
+    }
+    friend void swap(sample1&, sample2&);
+};
+
+void swap(sample1& x, sample2& y) {
+    int temp = x.a1;
+    x.a1 = y.b1;
+    y.b1 = temp;
+    cout << x.a1 << " " << y.b1 << endl;
+    string temp2 = x.name1;
+    x.name1 = y.name2;
+    y.name2 = temp2;
+    cout << x.name1 << " " << y.name2 << endl;
+}
+
+int main() {
+    sample1 x;
+    sample2 y;
+    swap(x, y);
+    return 0;
+}
