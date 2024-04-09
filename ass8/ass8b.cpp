@@ -9,18 +9,15 @@ public:
     students(int a) : rollno(a) {}
     int getRollno() const { return rollno; }
 };
-
 class test : virtual protected students
 {
     int phy, chem, maths;
-
 public:
     test(int r, int a, int b, int c) : students(r), phy(a), chem(b), maths(c) {}
     int getPhy() { return phy; }
     int getChem() { return chem; }
     int getMaths() { return maths; }
 };
-
 class sports : virtual protected students
 {
     int spa_score;
